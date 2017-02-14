@@ -31,65 +31,66 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Details
 - Hardcoded mock data from `data.json`   
 ```
-{
+{    
     "article": [
         {
             "word": "轻轻",
             "type": "a",
-            "color": "blue",
+            "color": "#177E89",
             "pinyin": "qingqing"
-        },    
+        },
         {
             "word": "的",
             "type": "u",
-            "color": "green",
+            "color": "#084c61",
             "pinyin": "de"
-        },    
+        },
         {
             "word": "我",
             "type": "r",
-            "color": "yellow",
+            "color": "#db3a34",
             "pinyin": "wo"
         },
         {
             "word": "走",
             "type": "v",
-            "color": "red",
+            "color": "#c36c34",
             "pinyin": "zou"
         },
         {
             "word": "了",
             "type": "u",
-            "color": "green",
+            "color": "#e6b653",
             "pinyin": "qingqing"
         },
         {
             "word": "正如",
             "type": "p",
+            "color": "#747E80",
             "pinyin": "zhengru"
         },
         {
             "word": "我",
             "type": "r",
-            "color": "yellow",
+            "color": "#db3a34",
             "pinyin": "wo"
         },
         {
             "word": "轻轻",
             "type": "a",
-            "color": "blue",
+            "color": "#177E89",
             "pinyin": "qingqing"
         },
         {
             "word": "的",
             "type": "u",
-            "color": "green",
+            "color": "#084c61",
             "pinyin": "de"
         },
         {
             "word": "来",
             "type": "v",
-            "color": "red",
+            "color": "#c36c34",
             "pinyin": "lai"
         }
     ]
