@@ -9,15 +9,13 @@
   <mu-raised-button label="creadr" v-on:click="creadr" fullWidth/>
   <mu-sub-header>翻译后</mu-sub-header>
   <mu-content-block>
-    <span v-for="(article,index) in articleArr"   v-bind:style="{ color: article.color}">
-      {{article.word}} {{article.pinyin}}
-    </span>
+    <tb v-for="(article,index) in articleArr"   v-bind:style="{ color: article.color}" :pinyin="article.pinyin" :word="article.word">
+    </tb>
   </mu-content-block>
 </div>
 </template>
-
 <script>
-import Hello from './components/Hello';
+import tb from './components/textBlock.vue'
 
 export default {
   name: 'app',
@@ -40,6 +38,10 @@ export default {
       horizontalPosition,
       trigger
     };
+  },
+
+  components: {
+    tb,
   },
 
   methods: {
