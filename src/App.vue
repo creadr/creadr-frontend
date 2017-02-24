@@ -47,11 +47,17 @@ export default {
   methods: {
     creadr: function() {
       {
+        let text = this.msg;
+        let body = '{"text":'+'"'+text+'"}';
+        let txt = JSON.parse(body);
+        console.log(body);
+        console.log(txt);
         // GET /someUrl
-        this.$http.get('/api/article').then(response => {
+        this.$http.post('/getResult',txt).then(response => {
 
           // get body data
-          // console.log(response.body);
+          console.log(response.body.data);
+          // console.log(body);
           this.articleArr = response.body.data;
           // console.log(this.articleArr);
 
