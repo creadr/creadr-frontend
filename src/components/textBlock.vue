@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="tb">
-    <div class="tbpy">{{pinyin.toString()}}</div>
+    <div class="tbpy">{{pinyin}}</div>
     <div class="tbword">{{word}}</div>
   </div>
 </template>
