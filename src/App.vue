@@ -53,12 +53,12 @@ export default {
         console.log(body);
         console.log(txt);
         // GET /someUrl
-        this.$http.post('/getResult',txt).then(response => {
+        this.$http.post('getResult',txt).then(response => {
 
           // get body data
-          console.log(response.body.data);
+          console.log(response.body);
           // console.log(body);
-          this.articleArr = response.body.data;
+          this.articleArr = response.body;
           // console.log(this.articleArr);
 
         }, response => {

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="tb">
-    <div class="tbpy">{{pinyin}}</div>
+    <div class="tbpy">{{pinyin.toString()}}</div>
     <div class="tbword">{{word}}</div>
   </div>
 </template>
@@ -10,14 +10,20 @@ export default {
   name: 'textBlock',
   props: {
     pinyin: {
-      type: String,
+      type: Array,
       required: false,
     },
     word: {
       type: String,
       required: true,
     }
+  },
+  filters: {
+    stw (ar) {
+
+    }
   }
+
 }
 </script>
 
