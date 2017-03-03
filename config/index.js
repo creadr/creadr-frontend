@@ -29,12 +29,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
+      '/getResult': {
         target: 'http://127.0.0.1:8080/api/',
         secure: false,
         changeOrigin: true,
         pathRewrite: {
-          '^/api': '/api'
+          '^/getResult': '/getResult'
         }
       }
     },
