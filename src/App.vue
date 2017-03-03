@@ -9,7 +9,7 @@
   <mu-raised-button label="creadr" v-on:click="creadr" fullWidth/>
   <mu-sub-header>翻译后</mu-sub-header>
   <mu-content-block>
-    <tb v-for="(article,index) in articleArr"   v-bind:style="{ color: article.color}" :pinyin="article.pinyin" :word="article.word">
+    <tb v-for="(article,index) in articleArr"   v-bind:style="{ color: article.color}" :data="article.word_obj">
     </tb>
   </mu-content-block>
 </div>
@@ -53,10 +53,10 @@ export default {
         console.log(body);
         console.log(txt);
         // GET /someUrl
-        this.$http.post('getResult',txt).then(response => {
+        this.$http.post('/getResult',txt).then(response => {
 
           // get body data
-          console.log(response.body);
+          console.log('res:'+response.body);
           // console.log(body);
           this.articleArr = response.body;
           // console.log(this.articleArr);

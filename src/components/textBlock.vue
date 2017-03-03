@@ -1,7 +1,9 @@
 <template lang="html">
-  <div class="tb">
-    <div class="tbpy">{{pinyin}}</div>
-    <div class="tbword">{{word}}</div>
+  <div class="tbFa">
+    <div  class="tb" v-for="obj in data">
+      <div class="tbpy">{{obj.pinyin}}</div>
+      <div class="tbword">{{obj.word}}</div>
+    </div>
   </div>
 </template>
 
@@ -13,24 +15,23 @@ export default {
       type: Array,
       required: false,
     },
-    word: {
-      type: String,
+    data: {
+      type: Array,
       required: true,
     }
   },
-  filters: {
-    stw (ar) {
-
-    }
-  }
-
 }
 </script>
 
 <style lang="scss">
 .tb{
-
   display: inline-block;
-  margin-right: 10px;
+  .tbword{
+    font-size: 20px;
+  }
+}
+.tbFa{
+  display: inline-block;
+  margin-right: 20px;
 }
 </style>
