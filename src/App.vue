@@ -47,8 +47,9 @@ export default {
   methods: {
     creadr: function() {
       {
-        let text = this.msg;
+        let text = this.msg.replace('\n',' ');
         let body = '{"text":'+'"'+text+'"}';
+        console.log(body);
         let txt = JSON.parse(body);
         console.log(body);
         console.log(txt);
