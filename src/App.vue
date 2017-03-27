@@ -2,7 +2,11 @@
 <div id="app">
   <mu-appbar title="creadr">
     <mu-icon-button icon='menu' slot="left" />
-    <mu-icon-button icon='expand_more' slot="right" />
+    <mu-flat-button slot="left" label="注音"/>
+    <mu-flat-button slot="left" label="分词"/>
+    <mu-flat-button slot="left" label="翻译"/>
+    <mu-flat-button slot="left" label="解释"/>
+    <mu-icon-button icon='account_box' slot="right" />
   </mu-appbar>
   <mu-text-field class="my-text-field" hintText="输入字符" fullWidth multiLine :rows="6" v-model="msg" icon="comment" />
   <br/>
