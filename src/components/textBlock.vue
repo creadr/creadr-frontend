@@ -1,25 +1,24 @@
 <template lang="html">
   <div class="tbFa">
     <div  class="tb" v-for="obj in data">
-      <div class="tbpy">{{obj.pinyin}}</div>
-      <div class="tbword">{{obj.word}}</div>
+      <textDetail :pinyin="obj.pinyin" :word="obj.word"></textDetail>
     </div>
   </div>
 </template>
 
 <script>
+import textDetail from './textDetail.vue'
 export default {
   name: 'textBlock',
   props: {
-    pinyin: {
-      type: Array,
-      required: false,
-    },
     data: {
       type: Array,
       required: true,
     }
   },
+  components: {
+    textDetail,
+  }
 }
 </script>
 
@@ -27,11 +26,15 @@ export default {
 .tb{
   display: inline-block;
   .tbword{
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .tbpy{
+    font-size: 14px;
   }
 }
 .tbFa{
   display: inline-block;
-  margin-right: 20px;
+  text-align: center;
 }
 </style>

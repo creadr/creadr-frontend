@@ -1,21 +1,20 @@
 <template>
 <div id="app">
-  <mu-appbar title="creadr">
+  <mu-appbar>
     <mu-icon-button icon='menu' slot="left" />
-    <mu-flat-button slot="left" label="注音"/>
+    <mu-flat-button slot="left" label="creadr"/>
+    <mu-flat-button slot="left" label="注音" @click="creadr"/>
     <mu-flat-button slot="left" label="分词"/>
     <mu-flat-button slot="left" label="翻译"/>
     <mu-flat-button slot="left" label="解释"/>
     <mu-icon-button icon='account_box' slot="right" />
   </mu-appbar>
+  <div class="paper">
   <mu-text-field class="my-text-field" hintText="输入字符" fullWidth multiLine :rows="6" v-model="msg" icon="comment" />
   <br/>
-  <mu-raised-button label="creadr" v-on:click="creadr" fullWidth/>
-  <mu-sub-header>翻译后</mu-sub-header>
-  <mu-content-block>
     <tb v-for="(article,index) in articleArr"   v-bind:style="{ color: article.color}" :data="article.word_obj">
     </tb>
-  </mu-content-block>
+  </div>
 </div>
 </template>
 <script>
@@ -54,7 +53,7 @@ export default {
         let content = {};
         content['text'] = this.msg;
         // GET /someUrl
-        this.$http.post('/api/getResult', JSON.stringify(content)).then(response => {
+        this.$http.post('/getResult', JSON.stringify(content)).then(response => {
 
           // console.log(body);
           this.articleArr = response.body;
@@ -94,6 +93,17 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     .my-text-field {
         margin-top: 20px;
+        height: 160px;
+        overflow-y: auto;
+    }
+
+    .paper{
+      width: 80%;
+      margin: 0 auto;
+      box-shadow: 0 0 10px  rgba(158, 158, 158, .5);
+      margin-bottom: 20px;
+      margin-top: 40px;
+      min-height: 200px;
     }
 
 }
